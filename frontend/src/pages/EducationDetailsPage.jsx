@@ -10,9 +10,9 @@ const educationData = {
     icon: <BookOpen size={48} />,
     tagline: "Solidifying the foundation for future scholars.",
     description: "Specialized coaching in Mathematics and Physics, providing a solid foundation for competitive exams and higher studies. We focus on deep conceptual clarity over rote memorization, empowering students to tackle complex numericals with confidence.",
+    boards: "NIOS, CBSE, State board",
     features: [
-      "Advanced Mathematics conceptually decoded",
-      "Physics theory, practicals, and numerical problem solving",
+      "Teaching Mathematics with Geometrical interpretation, application, derivation and problems solving without memorization.",
       "Mock exams and competitive exam preparation frameworks",
       "Personalized tracking and diagnostic assessments"
     ]
@@ -24,9 +24,7 @@ const educationData = {
     description: "Advanced coaching in Engineering Mathematics and connected core subjects to support sustained academic excellence. We assist university students in grasping complex engineering abstracts required for high-stakes projects and exams.",
     features: [
       "Engineering Mathematics (All Semesters)",
-      "Applied Mechanics, Strength of Materials, Thermodynamics",
-      "Software & IT logic foundations for non-CS branches",
-      "Final year project guidance and technical presentation skills"
+      "Usage of mathematics in functional subjects like fluid mechanics, Thermal engineering, Heat and mass transfer , solid mechanics , Computational fluid dynamics , Finite element analysis etc"
     ]
   }
 };
@@ -87,7 +85,25 @@ const EducationDetailsPage = () => {
               {service.description}
             </p>
 
-            <h3 style={{ marginBottom: '1.5rem', fontSize: '1.3rem' }}>Syllabus & Focus</h3>
+            {service.boards && (
+              <div style={{ marginBottom: '2.5rem', display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+                <span style={{ color: 'var(--color-accent)', fontWeight: 600, textTransform: 'uppercase', fontSize: '0.85rem', letterSpacing: '0.05em' }}>Boards:</span>
+                {service.boards.split(',').map((board, idx) => (
+                  <span key={idx} style={{ 
+                    padding: '4px 12px', 
+                    borderRadius: '20px', 
+                    fontSize: '0.85rem', 
+                    background: 'rgba(255, 255, 255, 0.08)', 
+                    color: '#fff',
+                    border: '1px solid rgba(255,255,255,0.1)'
+                  }}>
+                    {board.trim()}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <h3 style={{ marginBottom: '1.5rem', fontSize: '1.3rem' }}>Focus</h3>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               {service.features.map((feat, i) => (
                 <li key={i} style={{ padding: '1rem 0', borderBottom: '1px solid rgba(255,255,255,0.1)', color: 'var(--color-text-muted)' }}>
@@ -99,7 +115,7 @@ const EducationDetailsPage = () => {
         </div>
       </section>
 
-      <Contact />
+      <Contact module="education" />
     </div>
   );
 };

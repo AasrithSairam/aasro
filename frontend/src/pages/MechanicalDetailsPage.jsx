@@ -123,7 +123,7 @@ const MechanicalDetailsPage = () => {
         </div>
       </section>
 
-      <Contact />
+      <Contact module="mechanical" />
     </div>
   );
 };

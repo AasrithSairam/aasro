@@ -20,9 +20,7 @@ const ITSolutions = () => {
   const services = [
     { id: 'web-apps', icon: <Globe size={32} />, title: "Web & Desktop Apps", desc: "Front-end and back-end development delivering robust digital platforms." },
     { id: 'data-science', icon: <Database size={32} />, title: "Data Science", desc: "Predictive analytics, data processing, and enterprise dashboards." },
-    { id: 'cloud-solutions', icon: <Cloud size={32} />, title: "Cloud Solutions", desc: "Deployment and maintenance of highly scalable cloud infrastructure." },
     { id: 'ai-ml', icon: <Cpu size={32} />, title: "AI & Machine Learning", desc: "Insight generation and decision support systems for complex data." },
-    { id: 'custom-software', icon: <Code size={32} />, title: "Custom Software", desc: "Tailored enterprise modules to handle specialized workflows." },
     { id: 'ui-ux', icon: <Layout size={32} />, title: "UI/UX Design", desc: "Stunning user interfaces and optimized digital user experiences." },
   ];
 

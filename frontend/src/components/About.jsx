@@ -20,8 +20,8 @@ const About = () => {
           <h2 style={{ marginBottom: '2rem' }}>About Us.</h2>
           
           <p style={{ fontSize: '1.5rem', lineHeight: 1.6, color: 'var(--color-text)' }}>
-            We carry on the business of providing <span className="text-gradient">engineering, technical, design, and consultancy services</span>. 
-            From conception to reality, we bridge the gap between complex challenges and innovative solutions. 
+            We carry on the business of providing <span className="text-gradient">engineering, design, and IT consultancy services</span>. 
+            From concept to reality, we bridge the gap between complex challenges and innovative solutions. 
           </p>
           <br/>
           <p style={{ fontSize: '1.25rem', lineHeight: 1.6 }}>

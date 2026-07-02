@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+const Contact = ({ module }) => {
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    email: '', 
+    message: '', 
+    module: module || 'general' 
+  });
   const [status, setStatus] = useState('');
 
   const handleSubmit = async (e) => {
@@ -12,11 +17,14 @@ const Contact = () => {
       const res = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          module: module || formData.module
+        })
       });
       if (res.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', module: module || 'general' });
       } else {
         setStatus('error');
       }
@@ -68,6 +76,40 @@ const Contact = () => {
               style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '1rem' }}
             />
           </div>
+
+          {!module && (
+            <div>
+              <select
+                value={formData.module}
+                onChange={e => setFormData({...formData, module: e.target.value})}
+                required
+                style={{ 
+                  width: '100%', 
+                  padding: '1rem', 
+                  borderRadius: '0.5rem', 
+                  background: 'rgba(255,255,255,0.05)', 
+                  border: '1px solid rgba(255,255,255,0.1)', 
+                  color: '#fff', 
+                  fontSize: '1rem',
+                  cursor: 'pointer',
+                  outline: 'none',
+                  WebkitAppearance: 'none',
+                  MozAppearance: 'none',
+                  appearance: 'none',
+                  backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='white' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>")`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'right 1rem center',
+                  backgroundSize: '1.2rem'
+                }}
+              >
+                <option value="general" style={{ background: '#111', color: '#fff' }}>Select Topic / Department</option>
+                <option value="it" style={{ background: '#111', color: '#fff' }}>IT Solutions</option>
+                <option value="mechanical" style={{ background: '#111', color: '#fff' }}>Mechanical Solutions</option>
+                <option value="education" style={{ background: '#111', color: '#fff' }}>Educations</option>
+              </select>
+            </div>
+          )}
+
           <div>
             <textarea 
               placeholder="Message" 

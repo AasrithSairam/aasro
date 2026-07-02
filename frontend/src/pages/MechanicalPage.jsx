@@ -6,7 +6,7 @@ const MechanicalPage = () => {
   return (
     <div style={{ paddingTop: '60px' }}>
       <MechanicalSolutions />
-      <Contact />
+      <Contact module="mechanical" />
     </div>
   );
 };

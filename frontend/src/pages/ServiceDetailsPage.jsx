@@ -29,18 +29,6 @@ const servicesData = {
       "Big Data Processing Architecture"
     ]
   },
-  'cloud-solutions': {
-    title: "Cloud-Based Solutions",
-    icon: <Cloud size={48} />,
-    tagline: "Scalable infrastructure for modern enterprises.",
-    description: "We help businesses seamlessly migrate to the cloud and optimize existing cloud infrastructure. Using AWS, Azure, and Google Cloud, we ensure your applications are highly available, secure, and cost-effective.",
-    features: [
-      "Cloud Migration Strategies",
-      "Serverless Architecture",
-      "Kubernetes & Docker Containerization",
-      "24/7 Cloud Support & Maintenance"
-    ]
-  },
   'ai-ml': {
     title: "AI & Machine Learning",
     icon: <Cpu size={48} />,
@@ -51,18 +39,6 @@ const servicesData = {
       "Natural Language Processing (NLP)",
       "Computer Vision Systems",
       "Decision Support Systems"
-    ]
-  },
-  'custom-software': {
-    title: "Custom Software Modules",
-    icon: <Code size={48} />,
-    tagline: "Tailored code for specialized workflows.",
-    description: "Off-the-shelf software rarely fits perfectly. We design and develop proprietary enterprise software modules that seamlessly integrate into the core of your operational flow, enhancing efficiency without disruption.",
-    features: [
-      "Legacy System Modernization",
-      "Bespoke Internal Tools",
-      "Microservices Architecture",
-      "Automated Workflow Implementation"
     ]
   },
   'ui-ux': {
@@ -147,7 +123,7 @@ const ServiceDetailsPage = () => {
         </div>
       </section>
 
-      <Contact />
+      <Contact module="it" />
     </div>
   );
 };

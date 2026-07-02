@@ -6,7 +6,7 @@ const ITPage = () => {
   return (
     <div style={{ paddingTop: '60px' }}>
       <ITSolutions />
-      <Contact />
+      <Contact module="it" />
     </div>
   );
 };

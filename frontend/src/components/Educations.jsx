@@ -58,7 +58,7 @@ const Educations = () => {
                   <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#fff' }}>{prog.title}</h3>
                   <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>{prog.desc}</p>
                   <div style={{ color: 'var(--color-accent)', fontWeight: 500, fontSize: '0.9rem' }}>
-                    View Syllabus Details &rarr;
+                    Learn More &rarr;
                   </div>
                 </Link>
               </motion.div>

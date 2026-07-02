@@ -6,7 +6,7 @@ const EducationPage = () => {
   return (
     <div style={{ paddingTop: '60px' }}>
       <Educations />
-      <Contact />
+      <Contact module="education" />
     </div>
   );
 };
